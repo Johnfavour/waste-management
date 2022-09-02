@@ -2,13 +2,14 @@ import React, { useContext } from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import axios from 'axios';
+import { logoutCall } from '../apiCalls';
 
 export default function Navbar() {
-    const { user } = useContext(AuthContext);
+    const { user, dispatch } = useContext(AuthContext);
 
-    const logout = () => {
-        window.open("http://localhost:4000/api/auth/logout", "_self");
+    const handleLogout = (e) => {
+        e.preventDefault();
+        logoutCall(dispatch)
     };
 
     return (
@@ -26,7 +27,7 @@ export default function Navbar() {
                             <Link to='/admin' style={{ textDecoration: "none", color: "white", marginRight: "1rem" }}>
                                 <span className='navItem'>Dashboard</span>
                             </Link>
-                            <span className='navItem' onClick={logout}>Logout</span>
+                            <span className='navItem' onClick={handleLogout}>Logout</span>
                         </>
                     ) : (
                         <Link to='/login' style={{ textDecoration: "none", color: "white" }}>

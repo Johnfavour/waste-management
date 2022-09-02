@@ -1,4 +1,5 @@
 const router = require('express').Router();
+// const session = require('express-session');
 const User = require('../models/User');
 
 // REGISTER
@@ -28,27 +29,34 @@ router.post('/login', async (req, res) => {
         !user && res.status(401).json("Wrong Credentials!");
         user.password !== req.body.password && res.status(401).json("Wrong Credentials!");
         res.status(200).json("Access Granted!");
-        //res.render('/admin')
+        // session = req.session;
+        // session.userId = req.body.username;
+        console.log(req.session);
     } catch (error) {
         res.status(500).json(error);
     }
 });
 
-// LOGOUT
-router.delete('/logout', (req, res) => {
-    if (req.session) {
-        req.session.destroy(err => {
-            if (err) {
-                res.status(400).send("Unable to log out");
-            } else {
-                res.status(200).send("Logout successful")
-            }
-        });
-    } else {
-        //res.redirect('/');
-        res.end();
-    }
-});
+// router.post('/logout', (req, res) => {
+//     req.session.destroy()
+//     res.redirect('/');
+//     res.end();
+// });
 
+// LOGOUT
+// router.delete('/logout', (req, res) => {
+//     if (req.session) {
+//         req.session.destroy(err => {
+//             if (err) {
+//                 res.status(400).send("Unable to log out");
+//             } else {
+//                 res.status(200).send("Logout successful")
+//             }
+//         });
+//     } else {
+//         //res.redirect('/');
+//         res.end();
+//     }
+// });
 
 module.exports = router;
