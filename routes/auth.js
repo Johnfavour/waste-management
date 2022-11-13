@@ -37,13 +37,13 @@ router.post('/login', async (req, res) => {
     }
 });
 
+// LOGOUT
 // router.post('/logout', (req, res) => {
 //     req.session.destroy()
 //     res.redirect('/');
 //     res.end();
 // });
 
-// LOGOUT
 // router.delete('/logout', (req, res) => {
 //     if (req.session) {
 //         req.session.destroy(err => {
