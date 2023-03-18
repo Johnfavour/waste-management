@@ -3,10 +3,13 @@ import './admin.css';
 import axios from 'axios';
 import FilterDate from '../components/FilterDate';
 import dayjs from 'dayjs';
+import isSameOrAfter from 'dayjs/plugin/isSameOrAfter';
+import isSameOrBefore from 'dayjs/plugin/isSameOrBefore';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
 
-const isSameOrAfter = require("dayjs/plugin/isSameOrAfter");
-const isSameOrBefore = require("dayjs/plugin/isSameOrBefore");
-const customParseFormat = require('dayjs/plugin/customParseFormat');
+// const isSameOrAfter = require("dayjs/plugin/isSameOrAfter");
+// const isSameOrBefore = require("dayjs/plugin/isSameOrBefore");
+// const customParseFormat = require('dayjs/plugin/customParseFormat');
 dayjs.extend(isSameOrBefore);
 dayjs.extend(isSameOrAfter);
 dayjs.extend(customParseFormat);
