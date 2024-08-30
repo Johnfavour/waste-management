@@ -1,24 +1,24 @@
 import React, { useRef, useContext } from 'react';
-import './login.css'; // Assuming you're using the same styling for register as for login
+import './login.css'; 
 import { AuthContext } from '../context/AuthContext';
-import { registerCall } from '../apiCalls'; // Import the new register call function
+import { registerCall } from '../apiCalls'; 
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Register() {
     const username = useRef();
-    const email = useRef(); // New reference for email
+    const email = useRef(); 
     const password = useRef();
     const { isFetching, error, dispatch } = useContext(AuthContext);
-    const navigate = useNavigate(); // To redirect the user after registration
+    const navigate = useNavigate(); 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         registerCall({
             username: username.current.value,
-            email: email.current.value, // Include email in the registration data
+            email: email.current.value, 
             password: password.current.value
         }, dispatch).then(() => {
-            navigate('/login'); // Redirect to login page after successful registration
+            navigate('/login'); 
         }).catch((err) => {
             console.error('Registration failed:', err);
         });
@@ -35,7 +35,7 @@ export default function Register() {
                         required
                         ref={username}
                     />
-                    <label>Email</label> {/* New email input */}
+                    <label>Email</label> 
                     <input
                         type="email"
                         required

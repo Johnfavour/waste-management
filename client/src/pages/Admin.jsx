@@ -7,9 +7,6 @@ import isSameOrAfter from 'dayjs/plugin/isSameOrAfter';
 import isSameOrBefore from 'dayjs/plugin/isSameOrBefore';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
-// const isSameOrAfter = require("dayjs/plugin/isSameOrAfter");
-// const isSameOrBefore = require("dayjs/plugin/isSameOrBefore");
-// const customParseFormat = require('dayjs/plugin/customParseFormat');
 dayjs.extend(isSameOrBefore);
 dayjs.extend(isSameOrAfter);
 dayjs.extend(customParseFormat);
@@ -18,8 +15,7 @@ export default function Admin() {
     const [waste, setWaste] = useState([]);
     const [paginate, setPaginate] = useState(9);
     const [query, setQuery] = useState("");
-    // Este estado solo lo creo para tener el estado inicial
-    // de waste contante y usarlo en el filtro de la fecha:
+   
     const [allWaste, setAllWaste] = useState([]);
 
     useEffect(() => {
@@ -40,7 +36,6 @@ export default function Admin() {
     // Objects:
     const data = Object.values(waste);
 
-    // Creo un objeto con las Keys:
     const objectKeys = Object.keys(Object.assign({}, ...data));
 
     const Search = (waste) => {
@@ -52,8 +47,7 @@ export default function Admin() {
     const filterDate = (createdAt, field) => {
         const filteredData = allWaste.filter((item) => {
             if (field === "from" && dayjs(item.createdAt).isSameOrAfter(dayjs(createdAt))) {
-                // console.log(dayjs(item.createdAt));
-                // console.log(dayjs(createdAt));
+              
                 return item;
             }
         });

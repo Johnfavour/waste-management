@@ -21,6 +21,6 @@ a{
     font-weight: 700;
 }
 a:hover {
-    text-decoration: none; /* Underline on hover */
-    color: #507ba8; /* Darken the color on hover */
+    text-decoration: none; 
+    color: #507ba8; 
 }

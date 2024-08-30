@@ -17,10 +17,8 @@ export default function Calendar() {
         }
     ]);
 
-    // open close
     const [open, setOpen] = useState(false);
 
-    // get the target element to toggle 
     const refOne = useRef(null);
 
     useEffect(() => {
@@ -28,14 +26,12 @@ export default function Calendar() {
         document.addEventListener("click", hideOnClickOutside, true);
     }, []);
 
-    // hide dropdown on ESC press
     const hideOnEscape = (e) => {
         if (e.key === "Escape") {
             setOpen(false)
         }
     };
 
-    // Hide dropdown on outside click
     const hideOnClickOutside = (e) => {
         if (refOne.current && !refOne.current.contains(e.target)) {
             setOpen(false)
