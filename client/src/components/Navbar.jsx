@@ -17,10 +17,10 @@ export default function Navbar() {
             <div className="navContainer">
                 <Link to='/'>
                     <div className='logoContainer'>
-                        <img src="./images/logo_white.png" alt="" />
+                        <img src="./images/logo_whites.png" alt="" />
                     </div>
                 </Link>
-                <h1>Gestion de Residuos</h1>
+                <h1>Binix Waste Management</h1>
                 <div className='linksContainer'>
                     {user ? (
                         <>

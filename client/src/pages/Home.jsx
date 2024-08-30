@@ -29,6 +29,7 @@ export default function Home() {
             window.location.reload();
         } catch (error) {
             console.log(error.response.data);
+            
         }
     };
 
@@ -44,7 +45,7 @@ export default function Home() {
         <div>
             <div className='container'>
                 <form action="" onSubmit={handleSubmit}>
-                    <h2>Generacion de Residuos</h2>
+                    <h2>Waste Generation</h2>
                     {inputsA.map((item) => (
                         <Inputs
                             key={item.id}
@@ -54,13 +55,13 @@ export default function Home() {
                         />
                     ))}
                     {/*Fin Input 1*/}
-                    <label>Seleccione el Tipo de Residuo:</label>
+                    <label>Select waste type:</label>
                     <select
                         id="waste"
                         value={selected}
                         onChange={handleSelect}
                     >
-                        <optgroup label='Seleccione el Tipo de Residuo'>
+                        <optgroup label='Select the type of waste'>
                             {options.map((option) => (
                                 <option
                                     key={option.value}
@@ -82,10 +83,10 @@ export default function Home() {
                     <button
                         className='mainBtn'
                         type='submit'
-                        disabled={disable}
+                        // disabled={disable}
                         onClick={() => setDisable(true)}
                     >
-                        Enviar
+                        Save data
                     </button>
                 </form>
             </div>

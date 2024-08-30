@@ -69,7 +69,7 @@ export default function Admin() {
                             type="search"
                             name="search-form"
                             className="searchInput"
-                            placeholder="Buscar..."
+                            placeholder="Find by..."
                             onChange={(e) => setQuery(e.target.value)}
                         />
                     </label>
@@ -93,7 +93,7 @@ export default function Admin() {
                     className='moreBtn'
                     onClick={pagination}
                 >
-                    Ver mas
+                    See more
                 </button>
             </div>
         </>

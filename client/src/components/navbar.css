@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #1e22aa;
+    background-color: #464bcf;
     color: white;
     height: 5rem;
 }
@@ -16,9 +16,14 @@ img {
     height: 40px;
 }
 
+
 .navItem {
-    font-size: 1.5rem;
+    font-size: 1.0rem;
     cursor: pointer;
+    font-weight: 700;
+}
+.navItem:hover{
+    color: rgb(139, 139, 216);
 }
 
 @media (max-width: 768px) {
